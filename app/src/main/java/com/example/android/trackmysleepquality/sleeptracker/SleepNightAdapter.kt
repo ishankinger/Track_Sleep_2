@@ -9,6 +9,7 @@ import com.example.android.trackmysleepquality.R
 import com.example.android.trackmysleepquality.convertDurationToFormatted
 import com.example.android.trackmysleepquality.convertNumericQualityToString
 import com.example.android.trackmysleepquality.database.SleepNight
+import com.example.android.trackmysleepquality.databinding.GridItemSleepNightBinding
 import com.example.android.trackmysleepquality.databinding.ListItemSleepNightBinding
 
 class SleepNightAdapter : ListAdapter<SleepNight, ViewHolder>(SleepNightDiffCallback()){
@@ -24,12 +25,12 @@ class SleepNightAdapter : ListAdapter<SleepNight, ViewHolder>(SleepNightDiffCall
 
 }
 
-class ViewHolder private constructor(val binding: ListItemSleepNightBinding) : RecyclerView.ViewHolder(binding.root){
+class ViewHolder private constructor(val binding: GridItemSleepNightBinding) : RecyclerView.ViewHolder(binding.root){
 
     companion object {
         fun from(parent: ViewGroup): ViewHolder {
             val layoutInflater = LayoutInflater.from(parent.context)
-            val binding = ListItemSleepNightBinding.inflate(layoutInflater,parent,false)
+            val binding = GridItemSleepNightBinding.inflate(layoutInflater,parent,false)
             return ViewHolder(binding)
         }
     }
